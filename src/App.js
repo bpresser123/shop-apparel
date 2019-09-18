@@ -15,27 +15,35 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser } = this.props;
+    const { xyz } = this.props;
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+
+      console.log("User Auth: " + JSON.stringify(userAuth));
+
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef.onSnapshot(snapshot => {
-          setCurrentUser({
+          xyz({
             id: snapshot.id,
             ...snapshot.data()
           });
         });
+
+        console.log("App fb");
       }
 
-      setCurrentUser(userAuth)
+      xyz(userAuth)
+
+      console.log("App set: " + JSON.stringify(userAuth));
 
       // this.setState({ currentUser: user})
       // console.log(user);
       // console.log(this.state.currentUser.displayName);
       // this.showUser = createUserProfileDocument(this.state.currentUser)
     });
+
   }
 
   componentWillUnmount() {
@@ -43,6 +51,9 @@ class App extends React.Component {
   }
 
   render() {
+
+    console.log(JSON.stringify(this.props.currentUser));
+    
     return (
       <div>
         <Header />
@@ -54,14 +65,20 @@ class App extends React.Component {
       </div>
     );
   }
+  // console.log("current user: " + this.props.currentUser);
 }
 
 const mapStateToProps = ({ user }) => ({
   currentUser: user.currentUser
 })
 
+
+
 const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user))
+  xyz: user => {
+    console.log("dispatch user: " + JSON.stringify(user))
+    return dispatch(setCurrentUser(user))}
 })
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
