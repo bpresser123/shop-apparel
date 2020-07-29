@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
 import CartIcon from "../cart-icon/cart-icon.component";
-import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+import CartDropdown from "../CartDropdown/CartDropdown";
 
 import "./header.styles.scss";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 
 const Header = ({ currentUser, hidden }) => (
   <div className="header">
-    <Link to="/" className="logo-contai ner">
+    <Link to="/" className="logo-container">
       <Logo className="logo"></Logo>
     </Link>
 
