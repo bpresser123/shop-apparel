@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
-import CustomButton from "../CustomButton/CustomButton";
+import { CustomButton } from "../CustomButton/CustomButton";
 import { CartItem } from '../CartItem/CartItem';
 import { selectCartItems } from '../../redux/Cart/cart.selectors';
 import { toggleCartHidden } from '../../redux/Cart/cart.actions';
