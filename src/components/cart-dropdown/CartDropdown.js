@@ -1,9 +1,9 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { CustomButton } from "../CustomButton/CustomButton";
-import { CartItem } from '../CartItem/CartItem';
-import { selectCartItems } from '../../redux/Cart/cart.selectors';
-import { toggleCartHidden } from '../../redux/Cart/cart.actions';
+import { CustomButton } from "../custom-button/CustomButton";
+import { CartItem } from '../cart-item/CartItem';
+import { selectCartItems } from '../../redux/cart/cart.selectors';
+import { toggleCartHidden } from '../../redux/cart/cart.actions';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 

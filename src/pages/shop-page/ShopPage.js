@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import CollectionOverview from '../../components/CollectionsOverview/CollectionOverview';
-import CollectionPage from '../CollectionPage/CollectionPage';
+import CollectionOverview from '../../components/collections-overview/CollectionOverview';
+import CollectionPage from '../collection-page/CollectionPage';
 
 const ShopPage = ({ match }) => (
   <div className='shop-page'>
