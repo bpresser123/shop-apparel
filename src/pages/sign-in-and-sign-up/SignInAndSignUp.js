@@ -2,13 +2,11 @@ import React from 'react';
 import SignIn from '../../components/sign-in/SignIn';
 import SignUp from '../../components/sign-up/SignUp';
 
-import './sign-in-and-sign-up.styles.scss';
+import { SignInAndSignUpContainer } from './sign-in-and-sign-up.styles';
 
-export const SignInAndSignUp = () => {
-  return (
-  <div className="sign-in-and-sign-up">
+export const SignInAndSignUp = () => (
+  <SignInAndSignUpContainer>
     <SignIn />
     <SignUp />
-  </div>
-  )
-}
+  </SignInAndSignUpContainer>
+);
