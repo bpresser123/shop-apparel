@@ -1,4 +1,4 @@
-import CollectionsOverview from './CollectionOverview';
+import CollectionsOverview from './CollectionsOverview';
 
 const CollectionsOverviewContainer = (CollectionsOverview);
 
